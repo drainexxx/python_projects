@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+         <meta charset="UTF-8">
+         <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+ 
+{%- block content -%}
+Блок шаблона
+    {%- block table_contents %}
+    <ul>
+        {% for u in list_table -%}
+        <li> {% block item scoped %}{{ u }}{% endblock %} </li>
+        {% endfor -%}
+    </ul>
+    {% endblock table_contents %}
+
+{% endblock -%}
+ 
+</body>
+</html>
